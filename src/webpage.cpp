@@ -165,9 +165,9 @@ QString WebPage::content() const
     return m_mainFrame->toHtml();
 }
 
-void WebPage::setContent(const QString &content)
+void WebPage::setContent(const QString &content, const QUrl &baseUrl)
 {
-    m_mainFrame->setHtml(content);
+    m_mainFrame->setHtml(content, baseUrl);
 }
 
 QString WebPage::plainText() const

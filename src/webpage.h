@@ -61,7 +61,7 @@ public:
     QWebFrame *mainFrame();
 
     QString content() const;
-    void setContent(const QString &content);
+    void setContent(const QString &content, const QUrl &baseUrl);
 
     QString plainText() const;
 
