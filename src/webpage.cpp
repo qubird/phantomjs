@@ -180,16 +180,6 @@ void WebPage::setContentAndLocation(const QString &content, const QString &baseU
     }
 }
 
-void WebPage::setCustomHeaders(const QVariantMap &headers)
-{
-    m_networkAccessManager->setCustomHeaders(headers);
-}
-
-QVariantMap WebPage::customHeaders() const
-{
-    return m_networkAccessManager->customHeaders();
-}
-
 void WebPage::setCookies(const QVariantList &cookies)
 {
     m_networkAccessManager->setCookies(cookies);
