@@ -97,6 +97,9 @@ public slots:
     void uploadFile(const QString &selector, const QString &fileName);
     void sendEvent(const QString &type, const QVariant &arg1 = QVariant(), const QVariant &arg2 = QVariant());
 
+    void setCookies(const QVariantList &cookies);
+    QVariantList cookies() const;
+
 signals:
     void initialized();
     void loadStarted();
