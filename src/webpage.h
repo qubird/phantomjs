@@ -61,7 +61,7 @@ public:
     QWebFrame *mainFrame();
 
     QString content() const;
-    void setContent(const QString &content, const QUrl &baseUrl);
+    void setContent(const QString &content);
 
     QString plainText() const;
 
@@ -87,6 +87,7 @@ public:
 
 public slots:
     void openUrl(const QString &address, const QVariant &op, const QVariantMap &settings);
+    void setContentAndLocation(const QString &content, const QString &baseUrl);
     void release();
 
     QVariant evaluate(const QString &code);

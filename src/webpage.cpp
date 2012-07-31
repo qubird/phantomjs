@@ -165,9 +165,19 @@ QString WebPage::content() const
     return m_mainFrame->toHtml();
 }
 
-void WebPage::setContent(const QString &content, const QUrl &baseUrl)
+void WebPage::setContent(const QString &content)
 {
-    m_mainFrame->setHtml(content, baseUrl);
+    m_mainFrame->setHtml(content);
+}
+
+void WebPage::setContentAndLocation(const QString &content, const QString &baseUrl)
+{
+    if (baseUrl == "about:blank") {
+        m_mainFrame->setHtml(BLANK_HTML);
+    } else {
+        QUrl url = QUrl::fromEncoded(QByteArray(baseUrl.toAscii()));
+        m_mainFrame->setHtml(content, url);
+    }
 }
 
 QString WebPage::plainText() const
