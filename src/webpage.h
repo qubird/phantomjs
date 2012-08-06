@@ -90,7 +90,7 @@ public slots:
     void setContentAndLocation(const QString &content, const QString &baseUrl);
     void release();
 
-    QVariant evaluate(const QString &code);
+    QVariant evaluateJavaScript(const QString &code);
     bool render(const QString &fileName);
     bool injectJs(const QString &jsFilePath);
     void _appendScriptElement(const QString &scriptUrl);

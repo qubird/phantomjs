@@ -310,10 +310,12 @@ QVariantMap WebPage::paperSize() const
     return m_paperSize;
 }
 
-QVariant WebPage::evaluate(const QString &code)
+QVariant WebPage::evaluateJavaScript(const QString &code)
 {
     QString function = "(" + code + ")()";
-    return m_mainFrame->evaluateJavaScript(function, QString("phantomjs://webpage.evaluate()"));
+    return m_webPage->currentFrame()->evaluateJavaScript(
+                function,
+                QString("phantomjs://webpage.evaluate()"));
 }
 
 void WebPage::emitAlert(const QString &msg)
